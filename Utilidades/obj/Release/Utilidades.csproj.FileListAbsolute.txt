@@ -1,0 +1,10 @@
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\bin\Release\Utilidades.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\bin\Release\Utilidades.pdb
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\bin\Release\MySql.Data.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\bin\Release\Google.Protobuf.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\bin\Release\MySql.Data.xml
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\obj\Release\Utilidades.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\obj\Release\Utilidades.pdb
+C:\Users\Edgar Ariel Tavarez\documents\visual studio 2015\Projects\SistemaPrestamos\Utilidades\obj\Release\Utilidades.TxtBoxError.resources
+C:\Users\Edgar Ariel Tavarez\documents\visual studio 2015\Projects\SistemaPrestamos\Utilidades\obj\Release\Utilidades.csproj.GenerateResource.Cache
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\Utilidades\obj\Release\Utilidades.csprojResolveAssemblyReference.cache

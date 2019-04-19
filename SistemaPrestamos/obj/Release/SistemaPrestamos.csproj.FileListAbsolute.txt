@@ -1,0 +1,54 @@
+C:\Users\Edgar Ariel Tavarez\Downloads\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe.config
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe.config
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe.manifest
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.application
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.pdb
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\MySql.Data.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\Utilidades.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\Google.Protobuf.dll
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\MySql.Data.xml
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\bin\Release\Utilidades.pdb
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Abonos_Prestamos.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Consultar_Prestamos.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Consultas_Clientes.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Form1.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Login.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Menu.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.menuConsulta.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.menuMantenimiento.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Properties.Resources.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Registrar_Cliente.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Registrar_Prestamos.resources
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csproj.GenerateResource.Cache
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.exe.manifest
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.application
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.exe
+C:\Users\Edgar Ariel Tavarez\Documents\Visual Studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.pdb
+C:\Users\Edgar Ariel Tavarez\documents\visual studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csprojResolveAssemblyReference.cache
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe.config
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.exe
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.pdb
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe.manifest
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.application
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.exe
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\SistemaPrestamos.pdb
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\Utilidades.dll
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\Google.Protobuf.dll
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\MySql.Data.xml
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\bin\Release\Utilidades.pdb
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csprojResolveAssemblyReference.cache
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Abonos_Prestamos.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Consultar_Prestamos.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Consultas_Clientes.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Form1.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Login.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Menu.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.menuConsulta.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.menuMantenimiento.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Properties.Resources.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Registrar_Cliente.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.Registrar_Prestamos.resources
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csproj.GenerateResource.Cache
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.exe.manifest
+C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.application
