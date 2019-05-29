@@ -96,47 +96,68 @@ namespace SistemaPrestamos
 
         private void button2_Click(object sender, EventArgs e)
         {
+            calcularPrestamo();
+
+
+        }
+
+        public bool calcularPrestamo()
+        {
+            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "")
+            {
+                txt_cuotasPagar_prestamo.Validar = false;
+            }
+            else if (txt_cuotasPagar_prestamo.Text.Replace(" ", "").Trim() != "")
+            {
+                txt_interes_prestamo.Validar = false;
+            }
+
             errorProvider1.SetError(comboPlazo, (comboPlazo.SelectedIndex == -1 ? "Campo obligatorio" : ""));
+
+
+
             if (Utilidades.Utilidad.validarFormulario(this, errorProvider1) == true)
             {
                 buttonRegistraPrestamo.Enabled = false;
-                return;
+                return false;
             }
 
             if (comboPlazo.SelectedIndex == -1)
             {
                 buttonRegistraPrestamo.Enabled = false;
 
-                return;
+                return false;
             }
 
             if (txt_monto_prestamo.Text.Replace(" ", "").Trim().Length > 9)
             {
                 MessageBox.Show("El monto préstamo no puede superar una cantidad mayor a 9 digitos. ");
-                return;
+                return false;
 
             }
 
-            if (txt_interes_prestamo.Text.Replace(" ", "").Trim().Length > 4)
+            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "" && Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) > 100)
             {
-                MessageBox.Show("El interes préstamo no puede ser una cantidad mayor a 100. ");
-                return;
+                MessageBox.Show("El interes préstamo no puede ser una cantidad mayor a 100.");
+                return false;
 
             }
 
             if (txt_cuota_prestamo.Text.Replace(" ", "").Trim().Length > 9)
             {
                 MessageBox.Show("La cantidad cuota préstamo no puede superar una cantidad mayor a 9 digitos. ");
-                return;
+                return false;
 
             }
 
-            if (txt_mora_prestamo.Text.Replace(" ", "").Trim().Length > 4)
+            if (Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) > 100)
             {
-                MessageBox.Show("La mora préstamo no puede ser una cantidad mayor a 100. ");
-                return;
+                MessageBox.Show("La mora préstamo no puede ser una cantidad mayor a 100.");
+                return false;
 
             }
+
+
 
 
 
@@ -146,58 +167,80 @@ namespace SistemaPrestamos
             if (Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim()) == 0)
             {
                 MessageBox.Show("El monto préstamo debe ser mayor que cero.");
-                return;
+                return false;
             }
 
             if (Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim()) == 0)
             {
                 MessageBox.Show("La cantidad de cuota debe ser mayor que cero.");
-                return;
+                return false;
             }
             dataGridView.DataSource = null;
             buttonRegistraPrestamo.Enabled = true;
             dataGridView.Rows.Clear();
 
-                int cuota = Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim());
-                int monto = Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim());
-                int totalInteres = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) /100) * monto * cuota);
-                int interes =Convert.ToInt32( (Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto);
-                int totalPrestamo = monto + totalInteres;
-                txt_total_prestamo.Text = totalPrestamo.ToString();
-                txt_interesTotal_prestamo.Text = totalInteres.ToString();
-                int montoCuota = totalPrestamo / cuota;
-                txt_cuotasPagar_prestamo.Text = montoCuota.ToString();
-               int mora = Convert.ToInt32 ( ( Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) / 100) * montoCuota);
-               DateTime fecha = Convert.ToDateTime(calendario.Text, new CultureInfo("es-ES"));
-               for (int i = 1; i <= cuota; i++) {
-                    if (comboPlazo.SelectedIndex == 0)
-                    {
-                        fecha = fecha.AddDays(1);
 
-                    }
-                    else if (comboPlazo.SelectedIndex == 1)
-                    {
-                        fecha = fecha.AddDays(7);
+            int cuota = Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim());
+            int monto = Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim());
+            double totalInteres = 0;
+            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() == "")
+            {
+                totalInteres = Convert.ToInt32(txt_cuota_prestamo.Text) * Convert.ToInt32(txt_cuotasPagar_prestamo.Text);
+                totalInteres = totalInteres - monto;
+                double resultado = Convert.ToDouble((totalInteres / ((monto * cuota) / 100)));
+                if ((resultado % 1) < 0.5)
+                {
+                    txt_interes_prestamo.Text = Math.Round(resultado).ToString();
+                }
+                else
+                {
+                    txt_interes_prestamo.Text = Math.Ceiling(resultado).ToString();
 
-                    }
-                    else if (comboPlazo.SelectedIndex == 2)
-                    {
-                        fecha = fecha.AddDays(15);
+                }
 
-                    }
-                    else if (comboPlazo.SelectedIndex == 3)
-                    {
-                        fecha = fecha.AddMonths(1);
-                    }else
-                    {
-                        fecha = fecha.AddYears(1);
-                    }
+            }
+
+            totalInteres = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto * cuota);
+            int interes = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto);
+            int totalPrestamo = monto + Convert.ToInt32(totalInteres);
+            txt_total_prestamo.Text = totalPrestamo.ToString();
+            txt_interesTotal_prestamo.Text = totalInteres.ToString();
+            int montoCuota = totalPrestamo / cuota;
+            txt_cuotasPagar_prestamo.Text = montoCuota.ToString();
+            int mora = Convert.ToInt32((Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) / 100) * montoCuota);
+            DateTime fecha = Convert.ToDateTime(calendario.Text, new CultureInfo("es-ES"));
+            for (int i = 1; i <= cuota; i++)
+            {
+                if (comboPlazo.SelectedIndex == 0)
+                {
+                    fecha = fecha.AddDays(1);
+
+                }
+                else if (comboPlazo.SelectedIndex == 1)
+                {
+                    fecha = fecha.AddDays(7);
+
+                }
+                else if (comboPlazo.SelectedIndex == 2)
+                {
+                    fecha = fecha.AddDays(15);
+
+                }
+                else if (comboPlazo.SelectedIndex == 3)
+                {
+                    fecha = fecha.AddMonths(1);
+                }
+                else
+                {
+                    fecha = fecha.AddYears(1);
+                }
                 dataGridView.Rows.Add(i, fecha.ToString("d/M/yyyy"), montoCuota, 0, interes, mora, montoCuota, "Pendiente");
 
             }
-          
+
 
             dataGridView.ClearSelection();
+            return true;
 
         }
 
@@ -234,6 +277,7 @@ namespace SistemaPrestamos
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (calcularPrestamo() == false) return;
             errorProvider1.SetError(comboPlazo, (comboPlazo.SelectedIndex == -1 ? "Campo obligatorio" : ""));
             if (Utilidades.Utilidad.validarFormulario(this, errorProvider1) == true)
             {

@@ -52,6 +52,7 @@
             this.cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.SuspendLayout();
@@ -217,7 +218,8 @@
             this.telefono,
             this.cedula,
             this.direccion,
-            this.referente});
+            this.referente,
+            this.deuda});
             this.dataGridViewCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -286,6 +288,12 @@
             this.referente.HeaderText = "Referente";
             this.referente.Name = "referente";
             // 
+            // deuda
+            // 
+            this.deuda.HeaderText = "Deuda";
+            this.deuda.Name = "deuda";
+            this.deuda.ReadOnly = true;
+            // 
             // Consultas_Clientes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -336,5 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn referente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deuda;
     }
 }

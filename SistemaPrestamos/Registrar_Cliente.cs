@@ -17,21 +17,15 @@ namespace SistemaPrestamos
             InitializeComponent();
         }
 
+        
         private void Registrar_Cliente_Load(object sender, EventArgs e)
         {
             DataSet DS = new DataSet();
 
             if (txt_id_cliente.Text == "0")
             {
-                int codigo = 1;
-                string cmd = string.Format("select id_cliente from clientes order by id_cliente desc limit 1");
-                DS = Utilidades.Utilidad.ExecuteReader(cmd,"Error al traer los clientes, por favor intentar de nuevo.");
-                if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
-                {
-                    codigo = Convert.ToInt16(DS.Tables[0].Rows[0][0]) + 1;
-                }
+                traerCodigoSiguiente();
                
-                txt_id_cliente.Text = codigo+"";
             }else
             {
                 string cmd = string.Format("select * from clientes left join referentes on clientes.id_cliente = referentes.id_cliente where clientes.id_cliente={0}",txt_id_cliente.Text);
@@ -62,6 +56,14 @@ namespace SistemaPrestamos
                     {
                         si.Checked = true;
                         no.Checked = false;
+
+                        txt_nombre_referido.Enabled = true;
+                        txt_telefono_referido.Enabled = true;
+                        txt_celular_referido.Enabled = true;
+                        txt_otroTelefono_referido.Enabled = true;
+                        txt_cedula_referido.Enabled = true;
+                        txt_email_referido.Enabled = true;
+                        txt_direccion_referido.Enabled = true;
                     }
 
 
@@ -70,6 +72,20 @@ namespace SistemaPrestamos
                 }
 
             }
+        }
+
+        public void traerCodigoSiguiente()
+        {
+            DataSet DS = new DataSet();
+            int codigo = 1;
+            string cmd = string.Format("select id_cliente from clientes order by id_cliente desc limit 1");
+            DS = Utilidades.Utilidad.ExecuteReader(cmd, "Error al traer el código del cliente, por favor intentar de nuevo.");
+            if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
+            {
+                codigo = Convert.ToInt16(DS.Tables[0].Rows[0][0]) + 1;
+            }
+
+            txt_id_cliente.Text = codigo + "";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -250,6 +266,8 @@ namespace SistemaPrestamos
                         filasAfectadas = Utilidades.Utilidad.ExecuteNonQuery(cmd,"Error al registar el referente.");
                     }
                     MessageBox.Show("El cliente " + txt_nombre_cliente.Text + " se ha registrado correctamente");
+                    limpiarTexto();
+                    traerCodigoSiguiente();                    
                 }else
                 {
                     if (si.Checked)
@@ -309,7 +327,7 @@ namespace SistemaPrestamos
             txt_direccion_referido.Enabled = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void  limpiarTexto()
         {
             txt_nombre_cliente.Text = "";
             txt_telefono_cliente.Text = "";
@@ -327,6 +345,11 @@ namespace SistemaPrestamos
             txt_cedula_referido.Text = "";
             txt_email_referido.Text = "";
             txt_direccion_referido.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            limpiarTexto();
         }
     }
 }

@@ -25,6 +25,7 @@ namespace SistemaPrestamos
             cedula.DataPropertyName = "cedula_cliente";
             direccion.DataPropertyName = "direccion_cliente";
             referente.DataPropertyName = "nombre_referente";
+            deuda.DataPropertyName = "deuda";
             llenarDataGrid("no");
 
 
@@ -47,7 +48,7 @@ namespace SistemaPrestamos
 
         public void llenarDataGrid(string condicion)
         {
-            string cmd = "SELECT clientes.*,referentes.nombre_referente FROM clientes LEFT JOIN referentes on clientes.id_cliente = referentes.id_cliente where clientes.estado_cliente=1";
+            string cmd = "SELECT clientes.*,referentes.nombre_referente, sum(prestamos.total_prestamo - prestamos.abonos_prestamo ) as deuda, referentes.nombre_referente from clientes LEFT JOIN prestamos on prestamos.id_cliente=clientes.id_cliente LEFT JOIN referentes on referentes.id_cliente=clientes.id_cliente WHERE clientes.estado_cliente = 1 GROUP BY clientes.id_cliente";
             if (condicion != "no")
             {
                 cmd += condicion;
