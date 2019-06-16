@@ -20,6 +20,8 @@ namespace SistemaPrestamos
 
         }
 
+
+
         private void Hora_Tick(object sender, EventArgs e)
         {
 
@@ -81,6 +83,11 @@ namespace SistemaPrestamos
         }
 
         private void labelHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
