@@ -174,7 +174,7 @@ namespace SistemaPrestamos
 
         private void Abonos_Prestamos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Environment.Exit(-1);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

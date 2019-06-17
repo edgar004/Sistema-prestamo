@@ -67,7 +67,7 @@ namespace SistemaPrestamos
 
         private void Consultar_Prestamos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Environment.Exit(-1);
         }
 
         private void Consultar_Prestamos_Load(object sender, EventArgs e)

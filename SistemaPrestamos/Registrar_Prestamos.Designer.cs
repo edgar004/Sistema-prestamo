@@ -852,7 +852,7 @@
             this.Controls.Add(this.label34);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buscador);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Registrar_Prestamos";

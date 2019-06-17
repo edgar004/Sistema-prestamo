@@ -103,144 +103,185 @@ namespace SistemaPrestamos
 
         public bool calcularPrestamo()
         {
-            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "")
+            try
             {
-                txt_cuotasPagar_prestamo.Validar = false;
-            }
-            else if (txt_cuotasPagar_prestamo.Text.Replace(" ", "").Trim() != "")
-            {
-                txt_interes_prestamo.Validar = false;
-            }
-
-            errorProvider1.SetError(comboPlazo, (comboPlazo.SelectedIndex == -1 ? "Campo obligatorio" : ""));
-
-
-
-            if (Utilidades.Utilidad.validarFormulario(this, errorProvider1) == true)
-            {
-                buttonRegistraPrestamo.Enabled = false;
-                return false;
-            }
-
-            if (comboPlazo.SelectedIndex == -1)
-            {
-                buttonRegistraPrestamo.Enabled = false;
-
-                return false;
-            }
-
-            if (txt_monto_prestamo.Text.Replace(" ", "").Trim().Length > 9)
-            {
-                MessageBox.Show("El monto préstamo no puede superar una cantidad mayor a 9 digitos. ");
-                return false;
-
-            }
-
-            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "" && Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) > 100)
-            {
-                MessageBox.Show("El interes préstamo no puede ser una cantidad mayor a 100.");
-                return false;
-
-            }
-
-            if (txt_cuota_prestamo.Text.Replace(" ", "").Trim().Length > 9)
-            {
-                MessageBox.Show("La cantidad cuota préstamo no puede superar una cantidad mayor a 9 digitos. ");
-                return false;
-
-            }
-
-            if (Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) > 100)
-            {
-                MessageBox.Show("La mora préstamo no puede ser una cantidad mayor a 100.");
-                return false;
-
-            }
-
-
-
-
-
-
-
-
-            if (Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim()) == 0)
-            {
-                MessageBox.Show("El monto préstamo debe ser mayor que cero.");
-                return false;
-            }
-
-            if (Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim()) == 0)
-            {
-                MessageBox.Show("La cantidad de cuota debe ser mayor que cero.");
-                return false;
-            }
-            dataGridView.DataSource = null;
-            buttonRegistraPrestamo.Enabled = true;
-            dataGridView.Rows.Clear();
-
-
-            int cuota = Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim());
-            int monto = Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim());
-            double totalInteres = 0;
-            if (txt_interes_prestamo.Text.Replace(" ", "").Trim() == "")
-            {
-                totalInteres = Convert.ToInt32(txt_cuota_prestamo.Text) * Convert.ToInt32(txt_cuotasPagar_prestamo.Text);
-                totalInteres = totalInteres - monto;
-                double resultado = Convert.ToDouble((totalInteres / ((monto * cuota) / 100)));
-                if ((resultado % 1) < 0.5)
+                if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "")
                 {
-                    txt_interes_prestamo.Text = Math.Round(resultado).ToString();
+                    txt_cuotasPagar_prestamo.Validar = false;
                 }
-                else
+                else if (txt_cuotasPagar_prestamo.Text.Replace(" ", "").Trim() != "")
                 {
-                    txt_interes_prestamo.Text = Math.Ceiling(resultado).ToString();
+                    txt_interes_prestamo.Validar = false;
+                }
+
+                if (txt_interes_prestamo.Text.Replace(" ", "").Trim() == "" && txt_cuotasPagar_prestamo.Text.Replace(" ", "").Trim() == "")
+                {
+                    MessageBox.Show("Debe llenar el monto cuotas a pagar o el interes %");
+                    return false;
+                }
+
+                errorProvider1.SetError(comboPlazo, (comboPlazo.SelectedIndex == -1 ? "Campo obligatorio" : ""));
+
+
+
+                if (Utilidades.Utilidad.validarFormulario(this, errorProvider1) == true)
+                {
+                    buttonRegistraPrestamo.Enabled = false;
+                    return false;
+                }
+
+                if (comboPlazo.SelectedIndex == -1)
+                {
+                    buttonRegistraPrestamo.Enabled = false;
+
+                    return false;
+                }
+
+                if (txt_monto_prestamo.Text.Replace(" ", "").Trim().Length > 9)
+                {
+                    MessageBox.Show("El monto préstamo no puede superar una cantidad mayor a 9 digitos. ");
+                    return false;
 
                 }
 
-            }
+                if (txt_cuotasPagar_prestamo.Text.Replace(" ", "").Trim().Length > 9)
+                {
+                    MessageBox.Show("El monto cuotas a pagar no puede superar una cantidad mayor a 9 digitos. ");
+                    return false;
 
-            totalInteres = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto * cuota);
-            int interes = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto);
-            int totalPrestamo = monto + Convert.ToInt32(totalInteres);
-            txt_total_prestamo.Text = totalPrestamo.ToString();
-            txt_interesTotal_prestamo.Text = totalInteres.ToString();
-            int montoCuota = totalPrestamo / cuota;
-            txt_cuotasPagar_prestamo.Text = montoCuota.ToString();
-            int mora = Convert.ToInt32((Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) / 100) * montoCuota);
-            DateTime fecha = Convert.ToDateTime(calendario.Text, new CultureInfo("es-ES"));
-            for (int i = 1; i <= cuota; i++)
+                }
+
+
+
+                if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "" && Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) > 100)
+                {
+                    MessageBox.Show("El interes préstamo no puede ser una cantidad mayor a 100.");
+                    return false;
+
+                }
+
+                if (txt_cuota_prestamo.Text.Replace(" ", "").Trim().Length > 9)
+                {
+                    MessageBox.Show("La cantidad cuota préstamo no puede superar una cantidad mayor a 9 digitos. ");
+                    return false;
+
+                }
+
+                if (Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) > 100)
+                {
+                    MessageBox.Show("La mora préstamo no puede ser una cantidad mayor a 100.");
+                    return false;
+
+                }
+
+
+
+
+
+
+
+
+                if (Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim()) == 0)
+                {
+                    MessageBox.Show("El monto préstamo debe ser mayor que cero.");
+                    return false;
+                }
+
+                if (Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim()) == 0)
+                {
+                    MessageBox.Show("La cantidad de cuota debe ser mayor que cero.");
+                    return false;
+                }
+                dataGridView.DataSource = null;
+                buttonRegistraPrestamo.Enabled = true;
+                dataGridView.Rows.Clear();
+
+
+                int cuota = Convert.ToInt32(txt_cuota_prestamo.Text.Replace(" ", "").Trim());
+                int monto = Convert.ToInt32(txt_monto_prestamo.Text.Replace(" ", "").Trim());
+                double totalInteres = 0;
+                if (txt_interes_prestamo.Text.Replace(" ", "").Trim() == "")
+                {
+                    totalInteres = Convert.ToInt32(txt_cuota_prestamo.Text) * Convert.ToInt32(txt_cuotasPagar_prestamo.Text);
+                    totalInteres = totalInteres - monto;
+                    double resultado = Convert.ToDouble((totalInteres / ((monto * cuota) / 100)));
+                    if ((resultado % 1) < 0.5)
+                    {
+                        txt_interes_prestamo.Text = Math.Round(resultado).ToString();
+                    }
+                    else
+                    {
+                        txt_interes_prestamo.Text = Math.Ceiling(resultado).ToString();
+
+                    }
+
+                    if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "" && Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) > 100)
+                    {
+                        MessageBox.Show("Monto cuota a pagar supera el 100% de interes.");
+                        txt_interes_prestamo.Text = "";
+                        return false;
+
+                    }
+
+                    if (txt_interes_prestamo.Text.Replace(" ", "").Trim() != "" && Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) < 0)
+                    {
+                        MessageBox.Show("Monto cuota a pagar es muy bajo, se esta aplicando un interes de " + txt_interes_prestamo.Text + "%.");
+                        txt_interes_prestamo.Text = "";
+                        return false;
+
+                    }
+
+                }
+
+                totalInteres = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto * cuota);
+                int interes = Convert.ToInt32((Convert.ToDouble(txt_interes_prestamo.Text.Replace(" ", "").Trim()) / 100) * monto);
+                int totalPrestamo = monto + Convert.ToInt32(totalInteres);
+                txt_total_prestamo.Text = totalPrestamo.ToString();
+                txt_interesTotal_prestamo.Text = totalInteres.ToString();
+                int montoCuota = totalPrestamo / cuota;
+                txt_cuotasPagar_prestamo.Text = montoCuota.ToString();
+                int mora = Convert.ToInt32((Convert.ToDouble(txt_mora_prestamo.Text.Replace(" ", "").Trim()) / 100) * montoCuota);
+                DateTime fecha = Convert.ToDateTime(calendario.Text, new CultureInfo("es-ES"));
+                for (int i = 1; i <= cuota; i++)
+                {
+                    if (comboPlazo.SelectedIndex == 0)
+                    {
+                        fecha = fecha.AddDays(1);
+
+                    }
+                    else if (comboPlazo.SelectedIndex == 1)
+                    {
+                        fecha = fecha.AddDays(7);
+
+                    }
+                    else if (comboPlazo.SelectedIndex == 2)
+                    {
+                        fecha = fecha.AddDays(15);
+
+                    }
+                    else if (comboPlazo.SelectedIndex == 3)
+                    {
+                        fecha = fecha.AddMonths(1);
+                    }
+                    else
+                    {
+                        fecha = fecha.AddYears(1);
+                    }
+                    dataGridView.Rows.Add(i, fecha.ToString("d/M/yyyy"), montoCuota, 0, interes, mora, montoCuota, "Pendiente");
+
+                }
+
+
+                dataGridView.ClearSelection();
+                return true;
+
+            }
+            catch (Exception)
             {
-                if (comboPlazo.SelectedIndex == 0)
-                {
-                    fecha = fecha.AddDays(1);
-
-                }
-                else if (comboPlazo.SelectedIndex == 1)
-                {
-                    fecha = fecha.AddDays(7);
-
-                }
-                else if (comboPlazo.SelectedIndex == 2)
-                {
-                    fecha = fecha.AddDays(15);
-
-                }
-                else if (comboPlazo.SelectedIndex == 3)
-                {
-                    fecha = fecha.AddMonths(1);
-                }
-                else
-                {
-                    fecha = fecha.AddYears(1);
-                }
-                dataGridView.Rows.Add(i, fecha.ToString("d/M/yyyy"), montoCuota, 0, interes, mora, montoCuota, "Pendiente");
-
+                MessageBox.Show("Ha ocurrido un error al intetar crear el préstamo, por favor verifique que los datos ingresado tiene un formato correcto.");
+                return false;
             }
-
-
-            dataGridView.ClearSelection();
-            return true;
+            
 
         }
 
@@ -272,6 +313,19 @@ namespace SistemaPrestamos
             {
                 buscador.Text = obj.dataGridViewCliente.Rows[obj.dataGridViewCliente.CurrentCell.RowIndex].Cells[3].Value.ToString();
                 buscarClieteCedula();
+            }
+        }
+
+        private void NAR(object o)
+        {
+            try
+            {
+                while (System.Runtime.InteropServices.Marshal.ReleaseComObject(o) > 0) ;
+            }
+            catch { }
+            finally
+            {
+                o = null;
             }
         }
 
@@ -453,29 +507,35 @@ namespace SistemaPrestamos
 
                     libros_trabajo.SaveAs(fichero.FileName,
                         Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                    libros_trabajo.Close();
+                    libros_trabajo.Close(false);
                     aplicacion.Quit();
 
-
-                   System.Diagnostics.Process[] objProcess = System.Diagnostics.Process.GetProcessesByName("EXCEL");
-
-                    if (objProcess.Length > 0)
-                    {
-                        System.Collections.Hashtable objHashtable = new System.Collections.Hashtable();
-
-                        // check to kill the right process
-                        foreach (System.Diagnostics.Process processInExcel in objProcess)
-                        {
-                            if (objHashtable.ContainsKey(processInExcel.Id) == false)
-                            {
-                                processInExcel.Kill();
-                            }
-                        }
-                        objProcess = null;
-                    }
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(aplicacion);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(libros_trabajo);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(hoja_trabajo);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(chartRange);
 
 
-                        MessageBox.Show("El archivo de Excel se ha creado correctamente.");
+
+                    /*  System.Diagnostics.Process[] objProcess = System.Diagnostics.Process.GetProcessesByName("EXCEL");
+
+                       if (objProcess.Length > 0)
+                       {
+                           System.Collections.Hashtable objHashtable = new System.Collections.Hashtable();
+
+                           // check to kill the right process
+                           foreach (System.Diagnostics.Process processInExcel in objProcess)
+                           {
+                               if (objHashtable.ContainsKey(processInExcel.Id) == false)
+                               {
+                                   processInExcel.Kill();
+                               }
+                           }
+                           objProcess = null;
+                       }
+
+       */
+                    MessageBox.Show("El archivo de Excel se ha creado correctamente.");
                 }
             }
             catch (Exception ex)
@@ -626,7 +686,8 @@ namespace SistemaPrestamos
 
         private void Registrar_Prestamos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Environment.Exit(-1);
+
         }
     }
 }

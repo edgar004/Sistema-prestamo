@@ -106,5 +106,10 @@ namespace SistemaPrestamos
             Pantalla_Cliente.Show();
             this.Hide();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

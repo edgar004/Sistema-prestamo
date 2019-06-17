@@ -186,7 +186,7 @@ namespace SistemaPrestamos
 
         private void Consultas_Clientes_FormClosed(object sender, FormClosedEventArgs e)
         {
-           if(cerrarVentana)  Application.Exit();
+           if(cerrarVentana) System.Environment.Exit(-1);
         }
 
         private void button4_Click(object sender, EventArgs e)
