@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
+using System.Globalization;
 
 namespace Utilidades
 {
@@ -41,8 +42,7 @@ namespace Utilidades
             return ds;
 
         }
-
-
+      
         public static int ExecuteNonQuery(string cmd,string mensaje)
         {
             int resp = 0;
@@ -72,6 +72,13 @@ namespace Utilidades
             db.Close();
             return resp;
 
+        }
+
+        public static string FormatoDinero(long numero)
+        {
+
+           return String.Format(CultureInfo.InvariantCulture,
+                                 "{0:0,0}", numero);
         }
 
         public static bool validarFormulario(Control forms, ErrorProvider err)

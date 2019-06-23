@@ -336,7 +336,7 @@ namespace SistemaPrestamos
 
                 SaveFileDialog fichero = new SaveFileDialog();
                 fichero.Filter = "Excel (*.xls)|*.xls";
-                fichero.FileName = "ArchivoExportado";
+                fichero.FileName ="prestamo";
                 if (fichero.ShowDialog() == DialogResult.OK)
                 {
                     Microsoft.Office.Interop.Excel.Application aplicacion;
@@ -540,7 +540,7 @@ namespace SistemaPrestamos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString());
+                MessageBox.Show("Error al crear el archivo Excel, pero el préstamo fue creado correctamente.");
             }
 
         }
@@ -687,6 +687,26 @@ namespace SistemaPrestamos
         private void Registrar_Prestamos_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(-1);
+
+        }
+
+        private void txt_monto_prestamo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Utilidades.Utilidad.SoloNumeros(e);
+        }
+
+        private void txt_cuota_prestamo_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Utilidades.Utilidad.SoloNumeros(e);
+        }
+
+        private void txt_cuotasPagar_prestamo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilidades.Utilidad.SoloNumeros(e);
+        }
+
+        private void calendario_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

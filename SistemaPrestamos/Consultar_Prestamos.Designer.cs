@@ -152,6 +152,7 @@
             this.dataGridView.Location = new System.Drawing.Point(8, 54);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -172,6 +173,7 @@
             // 
             this.codigo_prestamo.HeaderText = "Código";
             this.codigo_prestamo.Name = "codigo_prestamo";
+            this.codigo_prestamo.ReadOnly = true;
             this.codigo_prestamo.Visible = false;
             // 
             // cliente
@@ -179,6 +181,7 @@
             this.cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.cliente.HeaderText = "Cliente";
             this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
             this.cliente.Width = 97;
             // 
             // Fecha
@@ -186,6 +189,7 @@
             this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             this.Fecha.Width = 90;
             // 
             // prestamo
@@ -193,6 +197,7 @@
             this.prestamo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.prestamo.HeaderText = "Préstamo";
             this.prestamo.Name = "prestamo";
+            this.prestamo.ReadOnly = true;
             this.prestamo.Width = 116;
             // 
             // totalInteres
@@ -200,6 +205,7 @@
             this.totalInteres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.totalInteres.HeaderText = "Total interes";
             this.totalInteres.Name = "totalInteres";
+            this.totalInteres.ReadOnly = true;
             this.totalInteres.Width = 138;
             // 
             // TotalPrestamo
@@ -207,24 +213,28 @@
             this.TotalPrestamo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.TotalPrestamo.HeaderText = "Total a pagar";
             this.TotalPrestamo.Name = "TotalPrestamo";
+            this.TotalPrestamo.ReadOnly = true;
             this.TotalPrestamo.Width = 153;
             // 
             // Abonos
             // 
             this.Abonos.HeaderText = "Abonos";
             this.Abonos.Name = "Abonos";
+            this.Abonos.ReadOnly = true;
             // 
             // Deuda
             // 
             this.Deuda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Deuda.HeaderText = "Deuda";
             this.Deuda.Name = "Deuda";
+            this.Deuda.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // dinero
             // 

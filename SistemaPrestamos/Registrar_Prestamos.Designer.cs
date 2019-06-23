@@ -320,6 +320,7 @@
             this.txt_cuotasPagar_prestamo.Size = new System.Drawing.Size(167, 25);
             this.txt_cuotasPagar_prestamo.TabIndex = 72;
             this.txt_cuotasPagar_prestamo.Validar = false;
+            this.txt_cuotasPagar_prestamo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuotasPagar_prestamo_KeyPress);
             // 
             // txt_interesTotal_prestamo
             // 
@@ -362,6 +363,7 @@
             this.txt_cuota_prestamo.Size = new System.Drawing.Size(139, 25);
             this.txt_cuota_prestamo.TabIndex = 65;
             this.txt_cuota_prestamo.Validar = true;
+            this.txt_cuota_prestamo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuota_prestamo_KeyPress_1);
             // 
             // txt_interes_prestamo
             // 
@@ -382,6 +384,7 @@
             this.txt_monto_prestamo.Size = new System.Drawing.Size(139, 25);
             this.txt_monto_prestamo.TabIndex = 63;
             this.txt_monto_prestamo.Validar = true;
+            this.txt_monto_prestamo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_monto_prestamo_KeyPress_1);
             // 
             // comboPlazo
             // 
@@ -430,6 +433,7 @@
             this.calendario.Size = new System.Drawing.Size(187, 22);
             this.calendario.TabIndex = 38;
             this.calendario.Value = new System.DateTime(2019, 4, 1, 0, 0, 0, 0);
+            this.calendario.ValueChanged += new System.EventHandler(this.calendario_ValueChanged);
             // 
             // label25
             // 

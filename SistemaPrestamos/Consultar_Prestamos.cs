@@ -20,11 +20,11 @@ namespace SistemaPrestamos
             codigo_prestamo.DataPropertyName = "id_prestamo";
             cliente.DataPropertyName = "nombre_cliente";
             Fecha.DataPropertyName = "fecha_prestamo";
-            prestamo.DataPropertyName = "monto_prestamo";
-            totalInteres.DataPropertyName = "total_interes_prestamo";
-            TotalPrestamo.DataPropertyName = "total_prestamo";
-            Abonos.DataPropertyName = "abonos_prestamo";
-            Deuda.DataPropertyName = "deuda_prestamo";
+            prestamo.DataPropertyName = "monto_prestamoFormato";
+            totalInteres.DataPropertyName = "total_interes_prestamoFormato";
+            TotalPrestamo.DataPropertyName = "total_prestamoFormato";
+            Abonos.DataPropertyName = "abonos_prestamoFormato";
+            Deuda.DataPropertyName = "deuda_prestamoFormato";
             Estado.DataPropertyName = "estado_prestamo";
             calcularMora();
             string cmd = "select SUM(total_prestamo - abonos_prestamo) as dinero from prestamos where estado_prestamo = 'Pendiente'";
@@ -42,7 +42,8 @@ namespace SistemaPrestamos
                 }
                 else
                 {
-                    dinero.Text = "RD "+DS.Tables[0].Rows[0][0].ToString();
+                    long deuda = long.Parse(DS.Tables[0].Rows[0][0].ToString());
+                    dinero.Text = "RD "+Utilidades.Utilidad.FormatoDinero(deuda);
 
                 }
             }
@@ -132,13 +133,13 @@ namespace SistemaPrestamos
 
         public void llenarDataGrid(string condicion)
         {
-            string cmd = "SELECT clientes.nombre_cliente,prestamos.*,(total_prestamo - abonos_prestamo) as deuda_prestamo FROM prestamos inner JOIN clientes on prestamos.id_cliente = clientes.id_cliente ORDER BY prestamos.id_prestamo desc";
+            string cmd = "SELECT clientes.nombre_cliente,prestamos.*,  FORMAT ((total_prestamo - abonos_prestamo), 'd', 'en-US' ) as deuda_prestamoFormato, FORMAT (monto_prestamo, 'd', 'en-US' ) as monto_prestamoFormato , FORMAT (total_interes_prestamo, 'd', 'en-US' ) as total_interes_prestamoFormato, FORMAT (total_prestamo, 'd', 'en-US' ) as total_prestamoFormato, FORMAT (abonos_prestamo, 'd', 'en-US' ) as abonos_prestamoFormato  FROM prestamos inner JOIN clientes on prestamos.id_cliente = clientes.id_cliente ORDER BY prestamos.id_prestamo desc";
             if (condicion != "no")
             {
                 cmd += condicion;
             }
             DataSet DS = new DataSet();
-            DS = Utilidades.Utilidad.ExecuteReader(cmd,"Error al traer los prèstamo, por favor intente de nuevo.");
+            DS = Utilidades.Utilidad.ExecuteReader(cmd, "Error al traer los préstamo, por favor intente de nuevo.");
             if (DS.Tables.Count > 0)
             {
                 dataGridView.DataSource = DS.Tables[0];

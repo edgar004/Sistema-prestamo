@@ -48,7 +48,7 @@ namespace SistemaPrestamos
 
         public void llenarDataGrid(string condicion)
         {
-            string cmd = "SELECT clientes.*,referentes.nombre_referente, sum(prestamos.total_prestamo - prestamos.abonos_prestamo ) as deuda, referentes.nombre_referente from clientes LEFT JOIN prestamos on prestamos.id_cliente=clientes.id_cliente LEFT JOIN referentes on referentes.id_cliente=clientes.id_cliente WHERE clientes.estado_cliente = 1 GROUP BY clientes.id_cliente";
+            string cmd = "SELECT clientes.*,referentes.nombre_referente, FORMAT (sum(prestamos.total_prestamo - prestamos.abonos_prestamo ), 'd', 'en-US' ) as deuda, referentes.nombre_referente from clientes LEFT JOIN prestamos on prestamos.id_cliente=clientes.id_cliente LEFT JOIN referentes on referentes.id_cliente=clientes.id_cliente WHERE clientes.estado_cliente = 1 GROUP BY clientes.id_cliente";
             if (condicion != "no")
             {
                 cmd += condicion;

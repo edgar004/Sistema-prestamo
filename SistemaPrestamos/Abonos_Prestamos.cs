@@ -79,15 +79,22 @@ namespace SistemaPrestamos
 
                 //Datos del préstamo
                 txt_monto_prestamo.Text = DS.Tables[0].Rows[0]["monto_prestamo"].ToString();
+                txt_monto_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_monto_prestamo.Text));
                 txt_interes_prestamo.Text = DS.Tables[0].Rows[0]["interes_prestamo"].ToString();
+                txt_interes_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_interes_prestamo.Text));
                 txt_cuota_prestamo.Text = DS.Tables[0].Rows[0]["cuotas_prestamo"].ToString();
+                txt_cuota_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_cuota_prestamo.Text));
                 txt_mora_prestamo.Text = DS.Tables[0].Rows[0]["mora_prestamo"].ToString();
+                txt_mora_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_mora_prestamo.Text));
                 txt_plazo_prestamo.Text = DS.Tables[0].Rows[0]["plazo_prestamo"].ToString();
                 DateTime fecha = DateTime.Parse(DS.Tables[0].Rows[0]["fecha_inicio_prestamo"].ToString());
                 calendario.Value = fecha;
                 txt_total_prestamo.Text = DS.Tables[0].Rows[0]["total_prestamo"].ToString();
+                txt_total_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_total_prestamo.Text));
                 txt_interesTotal_prestamo.Text = DS.Tables[0].Rows[0]["total_interes_prestamo"].ToString();
+                txt_interesTotal_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_interesTotal_prestamo.Text));
                 txt_cuotasPagar_prestamo.Text = DS.Tables[0].Rows[0]["monto_cuota_prestamo"].ToString();
+                txt_cuotasPagar_prestamo.Text = Utilidades.Utilidad.FormatoDinero(long.Parse(txt_cuotasPagar_prestamo.Text));
                 fechaPrestamo.Text = DS.Tables[0].Rows[0]["fecha_prestamo"].ToString();
                 comboBox1.DisplayMember = "numero_cuota";
                 comboBox1.ValueMember = "numero_cuota";

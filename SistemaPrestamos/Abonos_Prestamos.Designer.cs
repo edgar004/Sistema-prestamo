@@ -90,6 +90,7 @@
             this.fechaPrestamo = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.NumCuotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +99,6 @@
             this.Abonos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Deuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -160,9 +160,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(769, 60);
+            this.panel1.Location = new System.Drawing.Point(806, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 635);
+            this.panel1.Size = new System.Drawing.Size(236, 624);
             this.panel1.TabIndex = 29;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -193,7 +193,7 @@
             // 
             this.label16.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(20, 6);
+            this.label16.Location = new System.Drawing.Point(11, 7);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(216, 67);
             this.label16.TabIndex = 60;
@@ -682,7 +682,7 @@
             // 
             this.fechaPrestamo.Enabled = false;
             this.fechaPrestamo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaPrestamo.Location = new System.Drawing.Point(785, 36);
+            this.fechaPrestamo.Location = new System.Drawing.Point(822, 43);
             this.fechaPrestamo.Name = "fechaPrestamo";
             this.fechaPrestamo.Size = new System.Drawing.Size(187, 22);
             this.fechaPrestamo.TabIndex = 67;
@@ -758,8 +758,19 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(762, 210);
+            this.dataGridView.Size = new System.Drawing.Size(799, 210);
             this.dataGridView.TabIndex = 70;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(954, -3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 51;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // NumCuotas
             // 
@@ -778,7 +789,7 @@
             // 
             this.interes.HeaderText = "Interes";
             this.interes.Name = "interes";
-            this.interes.Width = 81;
+            this.interes.Width = 90;
             // 
             // MontoCuotas
             // 
@@ -796,13 +807,13 @@
             // 
             this.Abonos.HeaderText = "Abonos";
             this.Abonos.Name = "Abonos";
-            this.Abonos.Width = 88;
+            this.Abonos.Width = 90;
             // 
             // Deuda
             // 
             this.Deuda.HeaderText = "Deuda";
             this.Deuda.Name = "Deuda";
-            this.Deuda.Width = 85;
+            this.Deuda.Width = 95;
             // 
             // Estado
             // 
@@ -811,22 +822,11 @@
             this.Estado.Name = "Estado";
             this.Estado.Width = 140;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(954, -3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(58, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 51;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // Abonos_Prestamos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1012, 696);
+            this.ClientSize = new System.Drawing.Size(1044, 696);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.fechaPrestamo);
