@@ -52,3 +52,4 @@ C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\Siste
 C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.exe.manifest
 C:\Users\kcsolutions\Desktop\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.application
 C:\Users\Edgar Ariel Tavarez\documents\visual studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csproj.ResolveComReference.cache
+C:\Users\Edgar Ariel Tavarez\documents\visual studio 2015\Projects\SistemaPrestamos\SistemaPrestamos\obj\Release\SistemaPrestamos.csprojResolveAssemblyReference.cache

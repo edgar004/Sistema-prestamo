@@ -46,7 +46,32 @@ namespace SistemaPrestamos
                     dinero.Text = "RD "+Utilidades.Utilidad.FormatoDinero(deuda);
 
                 }
-            }
+
+
+                cmd = "select SUM(total_prestamo) as prestado from prestamos";
+                DS = Utilidades.Utilidad.ExecuteReader(cmd, "Error al mostrar la suma de las deudas.");
+
+
+                if (DS.Tables.Count > 0 && DS.Tables[0].Rows.Count > 0)
+                {
+                    if (DS.Tables[0].Rows[0][0].ToString().Equals(""))
+                    {
+                        prestado.Text = "RD 0";
+
+
+                    }
+                    else
+                    {
+                        long prestad = long.Parse(DS.Tables[0].Rows[0][0].ToString());
+                        prestado.Text = "RD " + Utilidades.Utilidad.FormatoDinero(prestad);
+
+                    }
+
+
+                }
+
+
+                }
 
             llenarDataGrid("no");
         }

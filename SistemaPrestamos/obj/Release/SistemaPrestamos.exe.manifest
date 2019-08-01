@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaPrestamos.exe" size="547896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaPrestamos.exe" size="549944">
       <assemblyIdentity name="SistemaPrestamos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/9RA4VzgzptaoTYTvTgwW9n4KRojNyuIwGgcR1N556o=</dsig:DigestValue>
+        <dsig:DigestValue>1Q+mFT911C+pXTw/RzRPZ4ytSEujDfMw8Q2nMtVul0M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>STL+RKpRn2XgmlPD/fxrLusCTApwLfEi6l9t4DmMOGQ=</dsig:DigestValue>
+        <dsig:DigestValue>8ST1IPsxFRQWKfMn17zPsXDTl+wisbCQHQm3BSL6QDk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

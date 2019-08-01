@@ -345,6 +345,7 @@ namespace SistemaPrestamos
 
                     aplicacion = new Microsoft.Office.Interop.Excel.Application();
                     libros_trabajo = aplicacion.Workbooks.Add();
+                    aplicacion.DisplayAlerts = false;
                     hoja_trabajo =
                         (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
                     Microsoft.Office.Interop.Excel.Range chartRange;
@@ -505,6 +506,18 @@ namespace SistemaPrestamos
 
                     }
 
+                    hoja_trabajo.Cells[(Convert.ToInt16(txt_cuota_prestamo.Text) + 17) + 5, "B"] = "Firma del cliente:";
+                    hoja_trabajo.Cells[(Convert.ToInt16(txt_cuota_prestamo.Text) + 17) + 5, "B"].Font.Bold = true;
+
+
+
+                    hoja_trabajo.Cells[(Convert.ToInt16(txt_cuota_prestamo.Text) + 17) + 5, "C"] = "_________________________________________________________";
+                    hoja_trabajo.Cells[(Convert.ToInt16(txt_cuota_prestamo.Text) + 17) + 5, "C"].Font.Bold = true;
+                    hoja_trabajo.Cells[(Convert.ToInt16(txt_cuota_prestamo.Text) + 17) + 5, "C"].ColumnWidth = 18;
+
+                    chartRange = hoja_trabajo.get_Range("C"+ (  (Convert.ToInt16(txt_cuota_prestamo.Text) + 17 + 5) ), "E"+ ((Convert.ToInt16(txt_cuota_prestamo.Text) + 17 + 5) ));
+                    chartRange.Merge(true);
+
                     libros_trabajo.SaveAs(fichero.FileName,
                         Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
                     libros_trabajo.Close(false);
@@ -538,7 +551,7 @@ namespace SistemaPrestamos
                     MessageBox.Show("El archivo de Excel se ha creado correctamente.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error al crear el archivo Excel, pero el préstamo fue creado correctamente.");
             }

@@ -68,6 +68,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(229, 24);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -76,6 +77,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(405, 25);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // button1
@@ -110,6 +112,7 @@
             this.label11.Size = new System.Drawing.Size(129, 19);
             this.label11.TabIndex = 60;
             this.label11.Text = "Consultar por: ";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // button2
             // 
